@@ -20,9 +20,10 @@ body,html{
     margin: 0 auto;
     position: relative;
     opacity: 1;
-    transition: all 4s ease;
+    transition: all 1s ease;
     .header{
         margin: 2rem 0.5rem;
+        margin-bottom: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
         .logo{
@@ -34,7 +35,7 @@ body,html{
             text-decoration: none;
             color: white;
             background-color: black;
-            border-radius: 5px;
+            border-radius: 6px;
             width: 166px;
             height: 43px;
             text-align: center;
@@ -43,12 +44,29 @@ body,html{
             align-items: center;
             span{
                 margin: auto;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.05em;
+                color: #FFFFFF;
+                text-transform: uppercase;
+                &:first-child{
+                    margin-right: 0;
+                }
+                &:nth-child(2){
+                    margin-left: 1px;
+                }
+                &::first-letter{
+                    font-size: 20px;
+                }
             }
         }
     }
     .form{
-        width: 90%;
+        width: calc(95% - 166px);
         margin: 0 auto;
+        margin-top: 100px;
+        margin-left: 3.5rem;
         form{
             display: grid;
             grid-template-rows: repeat(9,1fr);
@@ -73,7 +91,7 @@ body,html{
                     color: #000000;
                 }
                 .placeholder{
-                    transition: opcatity 3s ease-out;
+                    transition: transform 350ms cubic-bezier(0, 0, 0.2, 1) 0ms,font-size 350ms cubic-bezier(0, 0, 0.2, 1) 0ms;
                     opacity: 1;
                     pointer-events: none;
                     position: absolute;
@@ -130,15 +148,7 @@ body,html{
                     letter-spacing: 0.15em;
                     background-color: inherit;
                     color: #000000;
-                    .info{
-                        font-weight: 900;
-                        span{
-                            &::first-letter{
-                                font-weight: bold;
-                                font-size: 27px;
-                            }
-                        }
-                    }
+                    // padding-left: 0.5rem;
                 }
                 .placeholderS{
                     pointer-events: none;
@@ -156,11 +166,6 @@ body,html{
                     text-shadow: 0.000em 0.070em black, 0.024em 0.064em black, 0.048em 0.048em black, 0.064em 0.024em black, 0.072em 0.000em black, 0.064em -0.024em black, 0.048em -0.048em black, 0.024em -0.064em black, 0.000em -0.070em black, -0.024em -0.064em black, -0.048em -0.048em black, -0.064em -0.024em black, -0.070em -0.000em black, -0.064em 0.024em black, -0.048em 0.048em black, -0.024em 0.064em black;
                     span{
                         margin-right: 0.7rem;
-                        // display: inline-block;
-                        // &::first-letter{
-                        //     font-weight: bold;
-                        //     font-size: 27px;
-                        // }
                     }
                 }
                 &::before{
@@ -174,22 +179,47 @@ body,html{
                     border-radius: 4px;
                 }
             }
-            #submit{
-                cursor: pointer;
-                border-radius: 5px;
+            .submitwrapper{
                 margin-top: 0.8rem;
-                border: 1px solid black;
-                background-color: white;
-                width: 278px;
+                position: relative;
                 height: 65px;
-                justify-self: start;
-                font-family: 'Raleway';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 32px;
-                line-height: 38px;
-                text-align: center;
-                letter-spacing: 0.05em;
+                width: 278px;
+                #submit{
+                    cursor: pointer;
+                    background-color: white;
+                    width: 278px;
+                    height: 65px;
+                    border: 2px solid #000000;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    justify-self: start;
+                    &::first-letter{
+                        font-size: 37px;
+                    }
+                }
+                .sub{
+                    pointer-events: none;
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    margin-top: -20px;
+                    span{
+                        font-family: 'Raleway';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 32px;
+                        line-height: 38px;
+                        text-align: center;
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+                    }
+                    &::first-letter{
+                        font-size: 39px;
+                    }
+                }
             }
         }
     }
@@ -240,7 +270,7 @@ body,html{
     background-color: white;
     position: fixed;
     opacity: 0;
-    transition: all 4s ease;
+    transition: all 2s ease;
     top: 0;
     left: 0;
     width: 100%;
